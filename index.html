@@ -1,27 +1,89 @@
 <html>
-<head>
-    <title>AR Demo</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <!--<script src="https://d3js.org/d3.v6.min.js"></script>-->
-
-    <link rel="stylesheet" type="text/css" href="css/splash.css">
-    <link rel="stylesheet" type="text/css" href="css/app.css">
-</head>
-<body style='margin: 0px; overflow: hidden;'>
-    <a-scene embedded arjs>
-        <a-marker preset="hiro">
-        <!--<a-box position="0.0 0.5 0.0" material='color: yellow;'></a-box>-->
-          <a-entity id="helloworld" rotation="0 0 0" position="-0.01 -0.0 -0.0" scale="0.1 0.1 0.1">
-
-            <!-- add stuff with JavaScript-->
-
-          </a-entity>
-
-        </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
-    <script src="js/appD3v3.js"></script>
+  <head>
+      <title>Bangor AR Environmental Data</title>
+      <!-- Use A-Frame version from demo -->
+      <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+      <!-- Use AR.js version from demo, adjusted for marker support -->
+      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+      <!-- Include D3.js v3 as in demo -->
+      <script src="https://d3js.org/d3.v3.min.js"></script>
+  
+      <!-- Placeholder CSS files as in demo -->
+      <link rel="stylesheet" type="text/css" href="css/splash.css">
+      <link rel="stylesheet" type="text/css" href="css/app.css">
+  </head>
+  <body style="margin: 0px; overflow: hidden;">
+      <a-scene embedded arjs>
+          <a-marker preset="hiro">
+              <!-- Group 3D objects in an entity like the demo -->
+              <a-entity id="environmental-data" rotation="0 0 0" position="0 0 0" scale="0.1 0.1 0.1">
+                  <!-- Bangor University: Bar-chart -->
+                  <a-box
+                      width="1"
+                      height="2"
+                      depth="1"
+                      color="red"
+                      position="0 1 0"
+                  ></a-box>
+                  <a-text
+                      value="Bangor University\nStudent Satisfaction: 85%"
+                      color="black"
+                      align="center"
+                      position="0 2 0"
+                      scale="1 1 1"
+                  ></a-text>
+  
+                  <!-- Computer Science students -->
+                  <a-box
+                  width="1"
+                  height="4"
+                  depth="1"
+                  color="green"
+                  position="-2 2 2"
+              ></a-box>
+              <a-text
+                  value="Computer science students 60%"
+                  color="black"
+                  align="center"
+                  position="0 2 0"
+                  scale="1 1 1"
+              ></a-text>
+               <!-- Advanced Computer Science students -->
+               <a-box
+               width="1"
+               height="4"
+               depth="1"
+               color="yellow"
+               position="-3 1 0"
+           ></a-box>
+           <a-text
+               value=" Advanced Computer science students 60%"
+               color="black"
+               align="center"
+               position="-3 1 0"
+               scale="1 1 1"
+           ></a-text>
+  
+                  <!-- Garth Pier: Bar-chart -->
+                  <a-box
+                      width="1"
+                      height="3"
+                      depth="1"
+                      color="blue"
+                      position="-1 1.5 0"
+                  ></a-box>
+                  <a-text
+                      value="Garth Pier\nTourists: 10,000/year"
+                      color="black"
+                      align="center"
+                      position="-1 3 0"
+                      scale="1 1 1"
+                  ></a-text>
+              </a-entity>
+          </a-marker>
+          <a-entity camera></a-entity>
+      </a-scene>
+      <!-- Placeholder JavaScript file as in demo -->
+      <script src="js/appD3v3.js"></script>
   </body>
-</html>
+  </html>
